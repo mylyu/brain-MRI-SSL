@@ -98,10 +98,10 @@ This repository provides a single Python script (`evaluation.py`) for reproducin
 # Notes
 *   **Reproducibility**: Please be aware that due to differences in hardware, PyTorch, and cuDNN versions, your results may show minor variations (typically within ±0.5%) compared to the numbers reported in our manuscript.
 
-*   **Training**: All models were trained using the `solo-learn` framework. Our evaluation script contains the minimal code necessary to validate the models and relies on `solo-learn` for certain utilities.
+*   **Training**: All models were trained using the [**solo-learn**](https://github.com/vturrisi/solo-learn) framework. Our evaluation script contains the minimal code necessary to validate the models and relies on `solo-learn` for certain utilities.
 
 # Acknowledgements
-We would like to thank the authors of [**solo-learn**](https://github.com/vturrisi/solo-learn) for providing a comprehensive and high-quality library for the self-supervised learning community. If you use our evaluation code, which leverages their framework, please also consider citing their paper.
+We would like to thank the authors of `solo-learn` for providing a comprehensive and high-quality library for the self-supervised learning community. If you use our evaluation code, which leverages their framework, please also consider citing their paper.
 
 ```bibtex
 @article{JMLR:v23:21-1155,
