@@ -56,12 +56,15 @@ Self-supervised learning has shown potential in enhancing deep learning methods,
 This repository provides a single Python script (`evaluation.py`) for reproducing the classification results.
 
 ### Quick Start
-1.  **Clone this Repository.** This will give you the `evaluation.py` script and the default datasets.
+1.  **Clone this Repository.**
     ```bash
     git clone https://github.com/mylyu/brain-MRI-SSL.git
     cd brain-MRI-SSL
     ```
-2.  **Download Model Checkpoints.** Go to our **[Releases](https://github.com/mylyu/brain-MRI-SSL/releases)** page, download the desired checkpoints, and place them in a folder of your choice (e.g., `pretrained_models/`).
+2.  **Download Files from Release.**
+*   Go to our **[Releases](https://github.com/mylyu/brain-MRI-SSL/releases)** page.
+*   Download `datasets.zip` and unzip it. You should now have a `datasets/` folder in your project root.
+*   Download the model checkpoints and place them in a folder of your choice (e.g., `models/`).
 
 3.  **Install Dependencies.**
     ```bash
@@ -75,13 +78,13 @@ This repository provides a single Python script (`evaluation.py`) for reproducin
     ```bash
     python evaluation/evaluation.py \
         --task 4class \
-        --ckpt "./trained_models/mocov3-brain4class.ckpt"
+        --ckpt "./models/mocov3-brain4class.ckpt"
     ```
     *   **To reproduce the 16-Class SimCLR result:**
     ```bash
     python evaluation/evaluation.py \
         --task 16class \
-        --ckpt "./trained_models/simclr-brain16class.ckpt"
+        --ckpt "./models/simclr-brain16class.ckpt"
     ```
     *   **To run a custom 6-class task:**
     ```bash
