@@ -170,7 +170,7 @@ def main():
     # Configure task-specific parameters based on the selected mode
     if args.task == '4class':
         num_classes = 4
-        dataset_path = os.path.join(BASE_DATA_DIR, "brain_class")
+        dataset_path = os.path.join(BASE_DATA_DIR, "brain_class_4")
     elif args.task == '16class':
         num_classes = 16
         dataset_path = os.path.join(BASE_DATA_DIR, "brain_class_16")
