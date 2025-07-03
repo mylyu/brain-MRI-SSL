@@ -5,7 +5,7 @@ Official repository for the paper **"Tailored self-supervised pretraining improv
 <br>
 
 # Models & Data
-The model checkpoints corresponding to the main results in our paper, along with important supplementary models, are available for download from **GitHub Releases**.
+The **key model checkpoints** and validation datasets from our paper are available for download from a single location in **GitHub Releases**.
 
 ### **[>> Go to GitHub Releases to Download Model Checkpoints <<](https://github.com/mylyu/brain-MRI-SSL/releases)**
 
@@ -56,19 +56,20 @@ Self-supervised learning has shown potential in enhancing deep learning methods,
 This repository provides a single Python script (`evaluation.py`) for reproducing the classification results.
 
 ### Quick Start
-1. **Prepare Environment & Code.** Our script leverages the excellent [solo-learn](https://github.com/vturrisi/solo-learn) library. First, clone their repository and install the dependencies.
+1.  **Clone this Repository.** This will give you the `evaluation.py` script and the default datasets.
     ```bash
-    git clone https://github.com/vturrisi/solo-learn.git
-    cd solo-learn
-    pip install pytorch-lightning omegaconf torchmetrics
+    git clone https://github.com/mylyu/brain-MRI-SSL.git
+    cd brain-MRI-SSL
     ```
+2.  **Download Model Checkpoints.** Go to our **[Releases](https://github.com/mylyu/brain-MRI-SSL/releases)** page, download the desired checkpoints, and place them in a folder of your choice (e.g., `pretrained_models/`).
 
-2.  **Download our Script and Models.**
-    *   Download `evaluation.py` from our repository and place it inside the `solo-learn/` directory.
-    *   Download the model checkpoints from our **[Releases](https://github.com/mylyu/brain-MRI-SSL/releases)** and place them in a folder of your choice (e.g., `trained_models/`).
-    *   Download the validation datasets from our `datasets/` folder and place them inside the `solo-learn/` directory.
+3.  **Install Dependencies.**
+    ```bash
+    pip install torch torchvision pytorch-lightning omegaconf solo-learn torchmetrics
+    ```
+    *Our `evaluation.py` script contains the `LinearModel` class but relies on `solo-learn` for some utility functions.*
 
-3.  **Run Evaluation.** From the root directory of this project, run the evaluation script.
+4.  **Run Evaluation.** From the root directory of this project, run the evaluation script.
 
     *   **To reproduce the 4-Class MoCo-v3 result:**
     ```bash
@@ -94,13 +95,13 @@ This repository provides a single Python script (`evaluation.py`) for reproducin
 
 ***
 
+# Acknowledgements
+We would like to thank the authors of [**solo-learn**](https://github.com/vturrisi/solo-learn) for providing a comprehensive and high-quality library for the self-supervised learning community. If you use our evaluation code, which leverages their framework, please also consider citing their paper.
+
 # Notes
 *   **Reproducibility**: Please be aware that due to differences in hardware, PyTorch, and cuDNN versions, your results may show minor variations (typically within ±0.5%) compared to the numbers reported in our manuscript.
 
 *   **Training**: All models were trained using the `solo-learn` framework. Our evaluation script contains the minimal code necessary to validate the models and relies on `solo-learn` for certain utilities.
-
-# Acknowledgements
-We would like to thank the authors of [**solo-learn**](https://github.com/vturrisi/solo-learn) for providing a comprehensive and high-quality library for the self-supervised learning community. If you use our evaluation code, which leverages their framework, please also consider citing their paper.
 
 ```bibtex
 @article{JMLR:v23:21-1155,
